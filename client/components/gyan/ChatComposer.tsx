@@ -9,7 +9,11 @@ interface ChatComposerProps {
   onStop: () => void;
 }
 
-export function ChatComposer({ onSend, generating, onStop }: ChatComposerProps) {
+export function ChatComposer({
+  onSend,
+  generating,
+  onStop,
+}: ChatComposerProps) {
   const [value, setValue] = useState("");
   const ref = useRef<HTMLTextAreaElement | null>(null);
 
@@ -45,11 +49,20 @@ export function ChatComposer({ onSend, generating, onStop }: ChatComposerProps) 
           className="max-h-[200px] min-h-[48px] flex-1 resize-none border-0 bg-transparent px-0 py-2 focus-visible:ring-0"
         />
         {generating ? (
-          <Button aria-label="Stop" onClick={onStop} variant="destructive" className="gap-2">
+          <Button
+            aria-label="Stop"
+            onClick={onStop}
+            variant="destructive"
+            className="gap-2"
+          >
             <StopCircle className="h-4 w-4" /> Stop
           </Button>
         ) : (
-          <Button aria-label="Send" onClick={() => value.trim() && onSend(value.trim())} className="gap-2">
+          <Button
+            aria-label="Send"
+            onClick={() => value.trim() && onSend(value.trim())}
+            className="gap-2"
+          >
             <Send className="h-4 w-4" /> Send
           </Button>
         )}

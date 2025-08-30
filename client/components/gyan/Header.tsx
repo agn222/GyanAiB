@@ -15,7 +15,12 @@ export function Header({ sidebar }: HeaderProps) {
         <div className="flex items-center gap-2">
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="md:hidden"
+                aria-label="Open menu"
+              >
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
@@ -25,7 +30,9 @@ export function Header({ sidebar }: HeaderProps) {
           </Sheet>
           <a href="/" className="flex items-center gap-2">
             <div className="h-6 w-6 rounded-md gyan-gradient" />
-            <span className="text-base font-extrabold tracking-tight">Gyan AI</span>
+            <span className="text-base font-extrabold tracking-tight">
+              Gyan AI
+            </span>
           </a>
         </div>
         <div className="flex items-center gap-2">

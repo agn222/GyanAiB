@@ -15,10 +15,17 @@ export function ChatMessage({ role, content }: ChatMessageItem) {
   const [copied, setCopied] = useState(false);
 
   return (
-    <div className={cn("flex w-full gap-3", isUser ? "justify-end" : "justify-start")}> 
+    <div
+      className={cn(
+        "flex w-full gap-3",
+        isUser ? "justify-end" : "justify-start",
+      )}
+    >
       {!isUser && (
         <Avatar className="h-8 w-8">
-          <AvatarFallback className="bg-primary/10 text-primary">GA</AvatarFallback>
+          <AvatarFallback className="bg-primary/10 text-primary">
+            GA
+          </AvatarFallback>
         </Avatar>
       )}
       <div
@@ -29,9 +36,7 @@ export function ChatMessage({ role, content }: ChatMessageItem) {
             : "bg-secondary text-foreground border border-border rounded-bl-md",
         )}
       >
-        <div className="whitespace-pre-wrap">
-          {content}
-        </div>
+        <div className="whitespace-pre-wrap">{content}</div>
         <button
           aria-label="Copy message"
           onClick={() => {
@@ -44,12 +49,18 @@ export function ChatMessage({ role, content }: ChatMessageItem) {
             isUser ? "" : "",
           )}
         >
-          {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+          {copied ? (
+            <Check className="h-3.5 w-3.5" />
+          ) : (
+            <Copy className="h-3.5 w-3.5" />
+          )}
         </button>
       </div>
       {isUser && (
         <Avatar className="h-8 w-8">
-          <AvatarFallback className="bg-primary text-primary-foreground">You</AvatarFallback>
+          <AvatarFallback className="bg-primary text-primary-foreground">
+            You
+          </AvatarFallback>
         </Avatar>
       )}
     </div>
